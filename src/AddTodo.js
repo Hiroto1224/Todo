@@ -20,7 +20,7 @@ const postData = async (value) => {
     return json;
 }
 
-const AddTodo = ({ todos, setTodos }) => {
+const AddTodo = ({ setTodos }) => {
     const [todo, setTodo] = useState('');
 
     const handleAddTodo = (event) => {
