@@ -1,10 +1,11 @@
 import { useState } from "react";
 import GetTodo from "./GetTodo";
 import AddTodo from "./AddTodo";
+import Todo from "./Todo";
 
 
 function App() {
-  const [todos,setTodos] = useState([]);
+
 
 
   return (
@@ -12,8 +13,7 @@ function App() {
       <header className="App-header">
           <h1>TodoList</h1>
 
-          <GetTodo get={todos} setGet={setTodos}/>
-          <AddTodo setTodos={setTodos}/>
+          <Todo />
 
           
       </header>
