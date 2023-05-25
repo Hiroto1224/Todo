@@ -8,11 +8,11 @@ const fetchData = async () => {
     return data;
 }
 
-const GetTodo = (setGet) => {
+const GetTodo = (setTodos) => {
 
     useEffect(() => {
-        fetchData().then(data => setGet(data));
-    }, [setGet]);
+        fetchData().then(data => setTodos(data));
+    }, [setTodos]);
 }
 
 export default GetTodo;

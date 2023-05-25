@@ -27,7 +27,7 @@ const AddTodo = ({ setTodos }) => {
         setTodo(event.target.value);
     };
 
-    const HandleSubmit = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         if (todo.trim() === '') return;
         postData(todo).then(todo =>
@@ -46,7 +46,7 @@ const AddTodo = ({ setTodos }) => {
                     alignItems: "center",
                 }}
             >
-                <Box component="form" onSubmit={HandleSubmit} sx={{ mt: 1 }}>
+                <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
 
                     <Input placeholder="追加" variant="outlined" color="primary" value={todo} onChange={handleAddTodo} />
                     <Button variant="contained" type="submit">送信</Button>
