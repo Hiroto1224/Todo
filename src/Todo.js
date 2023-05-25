@@ -15,7 +15,7 @@ import AddTodo from "./AddTodo";
 const Todo = () => {
     const [todos, setTodos] = useState([]);
     const [open, setOpen] = useState(false);
-    const [data, setData] = useState({ id: "", name: "", state: undefined });
+    const [data, setData] = useState({ id: undefined, name: undefined, state: undefined });
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
