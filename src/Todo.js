@@ -1,4 +1,7 @@
-import { Container, ListItem, List, ListSubheader, ListItemButton, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
+import {
+    Container, ListItem, List, ListSubheader, ListItemButton,
+    Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle
+} from "@mui/material";
 import Sheet from '@mui/joy/Sheet';
 import { useTheme } from '@mui/material/styles';
 import React from 'react';
@@ -8,10 +11,11 @@ import deleteData from "./DeleteTodo";
 import { useState } from "react";
 import GetTodo from "./GetTodo";
 import AddTodo from "./AddTodo";
+
 const Todo = () => {
-    const [todos,setTodos] = useState([]);
+    const [todos, setTodos] = useState([]);
     const [open, setOpen] = useState(false);
-    const [data, setData] = useState({ "id": "", "name": "", "state": "" });
+    const [data, setData] = useState({ id: "", name: "", state: undefined });
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -36,7 +40,7 @@ const Todo = () => {
 
     const handleChangeState = () => {
 
-        setTodos((todo) => [...todo.map((obj) => (obj.id === data.id ? stateChange(obj) : obj))])
+        setTodos((todo) => todo.map((obj) => (obj.id === data.id ? stateChange(obj) : obj)))
 
         setOpen(false);
     }
@@ -44,7 +48,7 @@ const Todo = () => {
     const handleDelete = () => {
         deleteData(data.id);
 
-        setTodos((todo) => [...todo.filter((obj) => (obj.id !== data.id))])
+        setTodos((todo) => todo.filter((obj) => (obj.id !== data.id)))
         setOpen(false);
     }
 
@@ -63,7 +67,7 @@ const Todo = () => {
                         borderRadius: 'sm',
                     }}
                 >
-                    <ListSubheader sticky></ListSubheader>
+                    <ListSubheader></ListSubheader>
                     <List>
                         {todos.map(todo => (
                             <ListItem key={todo.id}>
@@ -98,7 +102,7 @@ const Todo = () => {
                     </DialogActions>
                 </Dialog>
             </Container>
-            <AddTodo todos={todos} setTodos={setTodos} />
+            <AddTodo setTodos={setTodos} />
         </>
 
     )

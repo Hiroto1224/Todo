@@ -1,8 +1,6 @@
-
+import { url } from "./App";
 import { useEffect } from "react";
 
-
-const url = 'https://todolist-team3.deno.dev/api/todo';
 
 const fetchData = async () => {
     const res = await fetch(url);
