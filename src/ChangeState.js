@@ -1,13 +1,13 @@
 
+import { url } from "./App"
 
 
-
-const url = 'https://todolist-team3.deno.dev/api/todo/';
 const postData = async (id, value) => {
 
     const data = { state: value };
 
-    await fetch(url + id, {
+    // eslint-disable-next-line no-template-curly-in-string
+    await fetch(url + "/" + id, {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
         headers: {
